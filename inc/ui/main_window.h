@@ -1,9 +1,12 @@
 #ifndef IRREDUCIBLE_POLYNOMIALS_MAIN_WINDOW_H
 #define IRREDUCIBLE_POLYNOMIALS_MAIN_WINDOW_H
 
-#include <QPushButton>
-#include <QProgressBar>
 #include <QMainWindow>
+
+#include "ui/number_input.h"
+#include "ui/label.h"
+#include "ui/button.h"
+#include "ui/progress_bar.h"
 
 namespace Ui
 {
@@ -24,12 +27,20 @@ private slots:
     void stopButtonHandler();
 
 private:
-    QPushButton* start_button;
-    QPushButton* pause_button;
-    QPushButton* resume_button;
-    QPushButton* stop_button;
+    uint64_t polynomial_count;
+    uint64_t timestamp;
 
-    QProgressBar* progress;
+    NumberInput* polynomial_degree_input;
+
+    Label* polynomial_count_value;
+    Label* time_spent_value;
+
+    Button* start_button;
+    Button* pause_button;
+    Button* resume_button;
+    Button* stop_button;
+
+    ProgressBar* progress;
 };
 
 #endif//IRREDUCIBLE_POLYNOMIALS_MAIN_WINDOW_H

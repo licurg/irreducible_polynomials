@@ -4,11 +4,16 @@ set(HEADER "")
 set(SOURCE "")
 
 file(GLOB HEADER "${CMAKE_CURRENT_SOURCE_DIR}/../inc/*.h")
+file(GLOB HEADER "${CMAKE_CURRENT_SOURCE_DIR}/../inc/ui/*.h")
 
 set(SOURCE
         ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/main_window.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/wrapper.cpp)
+        ${CMAKE_CURRENT_SOURCE_DIR}/ui/main_window.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ui/wrapper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ui/label.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ui/button.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ui/progress_bar.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ui/number_input.cpp)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} "../inc")
 

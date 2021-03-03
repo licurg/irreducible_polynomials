@@ -1,12 +1,13 @@
 #include <QGridLayout>
 #include <QPushButton>
 
-#include "wrapper.h"
+#include "ui/wrapper.h"
 
 Wrapper::Wrapper(QWidget* parent, int margins) : QWidget(parent)
 {
     this->grid = new QGridLayout;
     this->grid->setMargin(margins);
+
     this->setLayout(grid);
 }
 Wrapper::~Wrapper() noexcept
