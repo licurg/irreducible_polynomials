@@ -3,11 +3,12 @@ cmake_minimum_required(VERSION 3.17)
 set(HEADER "")
 set(SOURCE "")
 
-file(GLOB HEADER "${CMAKE_CURRENT_SOURCE_DIR}/../inc/*.h")
-file(GLOB HEADER "${CMAKE_CURRENT_SOURCE_DIR}/../inc/ui/*.h")
+file(GLOB_RECURSE HEADER "${CMAKE_CURRENT_SOURCE_DIR}/../inc/*.h")
 
 set(SOURCE
         ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/polynomial_generator.cpp
+
         ${CMAKE_CURRENT_SOURCE_DIR}/ui/main_window.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ui/wrapper.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/ui/label.cpp

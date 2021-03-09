@@ -1,6 +1,8 @@
 #include <QLabel>
 #include <QDebug>
 
+#include "polynomial_generator.h"
+
 #include "ui/styles.h"
 #include "ui/wrapper.h"
 #include "ui/main_window.h"
@@ -106,6 +108,23 @@ void MainWindow::startButtonHandler()
     this->pause_button->setDisabled(false);
     this->resume_button->setDisabled(true);
     this->stop_button->setDisabled(false);
+
+    this->polynomial_count = 0;
+
+    PolynomialCounter polynomial_counter(3,
+                                         this->polynomial_degree_input->value(),
+                                         &this->polynomial_count);
+    polynomial_counter.start();
+
+    this->polynomial_count_value->setText(
+            QString::number(this->polynomial_count));
+
+    this->polynomial_degree_input->setDisabled(false);
+
+    this->start_button->setDisabled(false);
+    this->pause_button->setDisabled(true);
+    this->resume_button->setDisabled(true);
+    this->stop_button->setDisabled(true);
 }
 void MainWindow::pauseButtonHandler()
 {

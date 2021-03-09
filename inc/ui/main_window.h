@@ -27,6 +27,7 @@ private slots:
     void stopButtonHandler();
 
 private:
+    uint8_t degree;
     uint64_t polynomial_count;
     uint64_t timestamp;
 
