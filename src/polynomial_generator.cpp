@@ -181,7 +181,6 @@ PolynomialCounter::PolynomialCounter(const uint64_t modulo,
     this->modulo = modulo;
     this->possible_polynomials =
             static_cast<uint64_t>(std::pow(modulo, degree));
-            //* (this->modulo - 1);
 #ifdef DEBUG
     qDebug() << "Possible polynomials: " << this->possible_polynomials;
 #endif
